@@ -1,0 +1,214 @@
+{
+    "users": [
+        {
+            "firstName": "Joe",
+            "lastName": "Shmo",
+            "email": "joe@shmo.com",
+            "passwordHash": "$2a$10$dPEwsAVi1ojv2RfxxTpZjuKSAbep7zEKb5myegm.ATbQ4sJk4agGu",
+            "playlists": [
+                "68f524b611e0f3901871f164",
+                "68f526c1ec1ea2ad00a6fae0"
+            ]
+        },
+        {
+            "firstName": "Jane",
+            "lastName": "Doe",
+            "email": "jane@doe.com",
+            "passwordHash": "$2a$10$dPEwsAVi1ojv2RfxxTpZjuKSAbep7zEKb5myegm.ATbQ4sJk4agGu",
+            "playlists": [
+                "68f526c4ec1ea2ad00a6fae8"
+            ]
+        }
+    ],
+    "playlists": [
+        {
+            "_id": "68f524b611e0f3901871f164",
+            "ownerEmail": "joe@shmo.com",
+            "name": "Spacey",
+            "songs": [
+                {
+                    "title": "Across the Universe",
+                    "artist": "The Beatles",
+                    "year": 1969,
+                    "youTubeId": "90M60PzmxEE"
+                },
+                {
+                    "title": "Astronomy Domine",
+                    "artist": "Pink Floyd",
+                    "year": 1967,
+                    "youTubeId": "8UbNbor3OqQ"
+                },
+                {
+                    "title": "Black Hole Sun",
+                    "artist": "Soundgarden",
+                    "year": 1994,
+                    "youTubeId": "3mbBbFH9fAg"
+                },
+                {
+                    "title": "Brain Damage/Eclipse",
+                    "artist": "Pink Floyd",
+                    "year": 1973,
+                    "youTubeId": "g1OOQP1-wOE"
+                },
+                {
+                    "title": "Fly Me to the Moon",
+                    "artist": "Frank Sinatra",
+                    "year": 1964,
+                    "youTubeId": "ZEcqHA7dbwM"
+                },
+                {
+                    "title": "In the Meantime",
+                    "artist": "Spacehog",
+                    "year": 1994,
+                    "youTubeId": "PCsGRCf8T9Y"
+                },
+                {
+                    "title": "Major Tom",
+                    "artist": "Peter Shilling",
+                    "year": 1982,
+                    "youTubeId": "wO0A0XcWy88"
+                },
+                {
+                    "title": "Man on the Moon",
+                    "artist": "REM",
+                    "year": 1992,
+                    "youTubeId": "dLxpNiF0YKs"
+                },
+                {
+                    "title": "Rocket Man",
+                    "artist": "Elton John",
+                    "year": 1972,
+                    "youTubeId": "DtVBCG6ThDk"
+                },
+                {
+                    "title": "Set the Controls for the Heart of the Sun",
+                    "artist": "Pink Floyd",
+                    "year": 1968,
+                    "youTubeId": "qupVCTn5Dko"
+                },
+                {
+                    "title": "Space Oddity",
+                    "artist": "David Bowie",
+                    "year": 1969,
+                    "youTubeId": "iYYRH4apXDo"
+                },
+                {
+                    "title": "Space Song",
+                    "artist": "Beach House",
+                    "year": 2015,
+                    "youTubeId": "RBtlPT23PTM"
+                },
+                {
+                    "title": "Starless",
+                    "artist": "King Crimson",
+                    "year": 1974,
+                    "youTubeId": "OfR6_V91fG8"
+                },
+                {
+                    "title": "Starman",
+                    "artist": "David Bowie",
+                    "year": 1972,
+                    "youTubeId": "t365MuktYQs"
+                },
+                {
+                    "title": "Starship Trooper",
+                    "artist": "Yes",
+                    "year": 1971,
+                    "youTubeId": "xk4U8BembHM"
+                }
+            ]
+        },
+        {
+            "_id": "68f526c1ec1ea2ad00a6fae0",
+            "ownerEmail": "joe@shmo.com",
+            "name": "Any Colour You Like",
+            "songs": [
+                {
+                    "title": "99 Red Balloons",
+                    "artist": "Nena",
+                    "year": 1984,
+                    "youTubeId": "Fpu5a0Bl8eY"
+                },
+                {
+                    "title": "Big Blue Sun",
+                    "artist": "Adrian Belew",
+                    "year": 1986,
+                    "youTubeId": "DMkEmW2awQw"
+                },
+                {
+                    "title": "Black Dog",
+                    "artist": "Led Zeppelin",
+                    "year": 1971,
+                    "youTubeId": "2KPEHohJMuw"
+                },
+                {
+                    "title": "Golden Brown",
+                    "artist": "The Stranglers",
+                    "year": 1981,
+                    "youTubeId": "7KIHvuMl4Kk"
+                },
+                {
+                    "title": "Goodbye Yellow Brick Road",
+                    "artist": "Elton John",
+                    "year": 1973,
+                    "youTubeId": "wy709iNG6i8"
+                },
+                {
+                    "title": "Green is the Colour",
+                    "artist": "Pink Floyd",
+                    "year": 1969,
+                    "youTubeId": "4XeWngFZaa8"
+                },
+                {
+                    "title": "In the Court of the Crimson King",
+                    "artist": "King Crimson",
+                    "year": 1969,
+                    "youTubeId": "ukgraQ-xkp4"
+                },
+                {
+                    "title": "Orange Crush",
+                    "artist": "REM",
+                    "year": 1988,
+                    "youTubeId": "_mSmOcmk7uQ"
+                },
+                {
+                    "title": "Pink Houses",
+                    "artist": "John Mellancamp",
+                    "year": 1983,
+                    "youTubeId": "qOfkpu6749w"
+                },
+                {
+                    "title": "Purple Rain",
+                    "artist": "Prince",
+                    "year": 1984,
+                    "youTubeId": "TvnYmWpD_T8"
+                },
+                {
+                    "title": "White Lines",
+                    "artist": "Grandmaster Flash and the Furious Five",
+                    "year": 1983,
+                    "youTubeId": "DwRXI-y6M9o"
+                }
+            ]
+        },
+        {
+            "_id": "68f526c4ec1ea2ad00a6fae8",
+            "ownerEmail": "jane@doe.com",
+            "name": "Don't be Rude",
+            "songs": [
+                {
+                    "title": "A Message to You Rudy",
+                    "artist": "The Specials",
+                    "year": 1979,
+                    "youTubeId": "cntvEDbagAw"
+                },
+                {
+                    "title": "Rudie Can't Fail",
+                    "artist": "The Clash",
+                    "year": 1979,
+                    "youTubeId": "uEK9oK02D1M"
+                }
+            ]
+        }
+    ]
+}
