@@ -3,6 +3,7 @@ const express = require('express')
 const cors = require('cors')
 const dotenv = require('dotenv')
 const cookieParser = require('cookie-parser')
+const { getDatabaseManager } = require('./db')
 
 // CREATE OUR SERVER
 dotenv.config()
@@ -24,11 +25,18 @@ app.use('/auth', authRouter)
 const storeRouter = require('./routes/store-router')
 app.use('/store', storeRouter)
 
-// INITIALIZE OUR DATABASE OBJECT
-const db = require('./db')
-db.on('error', console.error.bind(console, 'Database connection error:'))
+const dbManager = getDatabaseManager()
 
-// PUT THE SERVER IN LISTENING MODE
-app.listen(PORT, () => console.log(`Playlister Server running on port ${PORT}`))
+async function startServer() {
+    try {
+        await dbManager.initialize()
+        app.listen(PORT, () => console.log(`Playlister Server running on port ${PORT}`))
+    } catch (error) {
+        console.error('Database connection error:', error)
+        process.exit(1)
+    }
+}
+
+startServer()
 
 

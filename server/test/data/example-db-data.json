@@ -18,6 +18,16 @@
             "playlists": [
                 "68f526c4ec1ea2ad00a6fae8"
             ]
+        },
+        {
+            "firstName": "Alex",
+            "lastName": "Coder",
+            "email": "alex@coder.com",
+            "passwordHash": "$2a$10$dPEwsAVi1ojv2RfxxTpZjuKSAbep7zEKb5myegm.ATbQ4sJk4agGu",
+            "playlists": [
+                "68f53000ec1ea2ad00a6fae9",
+                "68f53000ec1ea2ad00a6faea"
+            ]
         }
     ],
     "playlists": [
@@ -207,6 +217,80 @@
                     "artist": "The Clash",
                     "year": 1979,
                     "youTubeId": "uEK9oK02D1M"
+                }
+            ]
+        },
+        {
+            "_id": "68f53000ec1ea2ad00a6fae9",
+            "ownerEmail": "alex@coder.com",
+            "name": "Chill Coding Sessions",
+            "songs": [
+                {
+                    "title": "Lo-fi Beats",
+                    "artist": "Lo-Fi Collective",
+                    "year": 2019,
+                    "youTubeId": "jfKfPfyJRdk"
+                },
+                {
+                    "title": "Night Drive",
+                    "artist": "Aimer",
+                    "year": 2016,
+                    "youTubeId": "0kyRjCbP1k8"
+                },
+                {
+                    "title": "Pure Imagination",
+                    "artist": "Gene Wilder",
+                    "year": 1971,
+                    "youTubeId": "RZ-uV72pQKI"
+                },
+                {
+                    "title": "Celestial",
+                    "artist": "Ed Sheeran",
+                    "year": 2022,
+                    "youTubeId": "GlPDP-O24NM"
+                },
+                {
+                    "title": "Dreams",
+                    "artist": "Fleetwood Mac",
+                    "year": 1977,
+                    "youTubeId": "mrZRURcb1cM"
+                }
+            ]
+        },
+        {
+            "_id": "68f53000ec1ea2ad00a6faea",
+            "ownerEmail": "alex@coder.com",
+            "name": "High-Energy Debugging",
+            "songs": [
+                {
+                    "title": "Hysteria",
+                    "artist": "Muse",
+                    "year": 2003,
+                    "youTubeId": "Xsp3_a-PMTw"
+                },
+                {
+                    "title": "Can't Hold Us",
+                    "artist": "Macklemore & Ryan Lewis",
+                    "year": 2011,
+                    "youTubeId": "2zNSgSzhBfM"
+                },
+                {
+                    "title": "Lose Yourself",
+                    "artist": "Eminem",
+                    "year": 2002,
+                    "youTubeId": "_Yhyp-_hX2s"
+                },
+                {
+                    "title": "Believer",
+                    "artist": "Imagine Dragons",
+                    "year": 2017,
+                    "youTubeId": "7wtfhZwyrcc"
+                },
+                {
+                    "title": "Edge of Seventeen",
+                    "artist": "Stevie Nicks",
+                    "year": 1981,
+                    "youTubeId": "Dn8-4tjPxD8"
                 }
             ]
         }

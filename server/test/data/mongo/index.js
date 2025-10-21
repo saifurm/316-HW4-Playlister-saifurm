@@ -1,4 +1,6 @@
 const dotenv = require('dotenv').config({ path: __dirname + '/../../../.env' });
+const mongoose = require('mongoose');
+const mongoUri = process.env.MONGO_URI || process.env.DB_CONNECT;
 
 async function clearCollection(collection, collectionName) {
     try {
@@ -30,9 +32,8 @@ async function resetMongo() {
     await fillCollection(User, "User", testData.users);
 }
 
-const mongoose = require('mongoose')
 mongoose
-    .connect(process.env.DB_CONNECT, { useNewUrlParser: true })
+    .connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => { resetMongo() })
     .catch(e => {
         console.error('Connection error', e.message)

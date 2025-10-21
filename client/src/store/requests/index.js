@@ -1,44 +1,70 @@
 /*
     This is our http api, which we use to send requests to
-    our back-end API. Note we`re using the Axios library
-    for doing this, which is an easy to use AJAX-based
-    library. We could (and maybe should) use Fetch, which
-    is a native (to browsers) standard, but Axios is easier
-    to use when sending JSON back and forth and it`s a Promise-
-    based API which helps a lot with asynchronous communication.
+    our back-end API. We now issue all requests using the
+    browser-native Fetch API.
     
     @author McKilla Gorilla
 */
 
-import axios from 'axios'
-axios.defaults.withCredentials = true;
-const api = axios.create({
-    baseURL: 'http://localhost:4000/store',
-})
+const BASE_URL = 'http://localhost:4000/store';
 
-// THESE ARE ALL THE REQUESTS WE`LL BE MAKING, ALL REQUESTS HAVE A
-// REQUEST METHOD (like get) AND PATH (like /top5list). SOME ALSO
-// REQUIRE AN id SO THAT THE SERVER KNOWS ON WHICH LIST TO DO ITS
-// WORK, AND SOME REQUIRE DATA, WHICH WE WE WILL FORMAT HERE, FOR WHEN
-// WE NEED TO PUT THINGS INTO THE DATABASE OR IF WE HAVE SOME
-// CUSTOM FILTERS FOR QUERIES
+const parseResponse = async (response) => {
+    const contentType = response.headers.get('content-type') || '';
+    let data = null;
+
+    if (contentType.includes('application/json')) {
+        data = await response.json();
+    } else if (contentType.length > 0) {
+        data = await response.text();
+    }
+
+    const result = { status: response.status, data };
+
+    if (!response.ok) {
+        const error = new Error(`Request failed with status ${response.status}`);
+        error.response = result;
+        throw error;
+    }
+
+    return result;
+};
+
+const buildOptions = (method, body) => {
+    const options = {
+        method,
+        credentials: 'include',
+        headers: {}
+    };
+
+    if (body !== undefined) {
+        options.headers['Content-Type'] = 'application/json';
+        options.body = JSON.stringify(body);
+    }
+
+    return options;
+};
+
+const request = (path, method, body) => {
+    return fetch(`${BASE_URL}${path}`, buildOptions(method, body)).then(parseResponse);
+};
+
 export const createPlaylist = (newListName, newSongs, userEmail) => {
-    return api.post(`/playlist/`, {
-        // SPECIFY THE PAYLOAD
+    return request('/playlist/', 'POST', {
         name: newListName,
         songs: newSongs,
         ownerEmail: userEmail
-    })
-}
-export const deletePlaylistById = (id) => api.delete(`/playlist/${id}`)
-export const getPlaylistById = (id) => api.get(`/playlist/${id}`)
-export const getPlaylistPairs = () => api.get(`/playlistpairs/`)
+    });
+};
+
+export const deletePlaylistById = (id) => request(`/playlist/${id}`, 'DELETE');
+
+export const getPlaylistById = (id) => request(`/playlist/${id}`, 'GET');
+
+export const getPlaylistPairs = () => request('/playlistpairs/', 'GET');
+
 export const updatePlaylistById = (id, playlist) => {
-    return api.put(`/playlist/${id}`, {
-        // SPECIFY THE PAYLOAD
-        playlist : playlist
-    })
-}
+    return request(`/playlist/${id}`, 'PUT', { playlist });
+};
 
 const apis = {
     createPlaylist,
@@ -46,6 +72,6 @@ const apis = {
     getPlaylistById,
     getPlaylistPairs,
     updatePlaylistById
-}
+};
 
 export default apis

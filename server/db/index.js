@@ -1,15 +1,35 @@
+const dotenv = require('dotenv');
+const { DatabaseError } = require('./DatabaseManager');
+const MongoDatabaseManager = require('./mongodb');
+const PostgresDatabaseManager = require('./postgresql');
 
-const mongoose = require('mongoose')
-const dotenv = require('dotenv')
 dotenv.config();
 
-mongoose
-    .connect(process.env.DB_CONNECT, { useNewUrlParser: true })
-    .catch(e => {
-        console.error('Connection error', e.message)
-    })
+let cachedManager = null;
 
-const db = mongoose.connection
+const createManager = () => {
+    const target = (process.env.CURRENT_DATABASE || 'MONGO').toLowerCase();
+    switch (target) {
+        case 'postgres':
+        case 'postgresql':
+        case 'pg':
+            return new PostgresDatabaseManager();
+        case 'mongo':
+        case 'mongodb':
+        default:
+            return new MongoDatabaseManager();
+    }
+};
 
-module.exports = db
+const getDatabaseManager = () => {
+    if (!cachedManager) {
+        cachedManager = createManager();
+    }
+    return cachedManager;
+};
+
+module.exports = {
+    getDatabaseManager,
+    DatabaseError
+};
 
