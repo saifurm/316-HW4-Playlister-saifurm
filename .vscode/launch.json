@@ -10,7 +10,7 @@
       "autoAttachChildProcesses": true,
       "smartStep": true,
       "skipFiles": ["<node_internals>/**"],
-      "cwd": "${workspaceFolder}",
+      "cwd": "${workspaceFolder}/server/",
       "console": "integratedTerminal"
     },
     {
